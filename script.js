@@ -1,5 +1,6 @@
 const overlay    = document.querySelector('.holo-overlay');
 const turbulence = document.getElementById('turbulence');
+const qrContainer = document.getElementById('qr-code');
 
 // Pan holo texture on device tilt
 window.addEventListener('deviceorientation', evt => {
@@ -18,3 +19,13 @@ let frame = 0;
   turbulence.setAttribute('baseFrequency', `${fx} ${fy}`);
   requestAnimationFrame(animate);
 })();
+
+// Generate QR code for card number
+if (qrContainer && window.QRCode) {
+  new QRCode(qrContainer, {
+    text: '132842687',
+    width: 80,
+    height: 80,
+    correctLevel: QRCode.CorrectLevel.H
+  });
+}

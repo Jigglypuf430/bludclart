@@ -83,6 +83,7 @@ body {
 .qr {
   display: block;
   width: 80px;
+  height: 80px;
   margin: 10px auto;
   position: relative;
   z-index: 2;
